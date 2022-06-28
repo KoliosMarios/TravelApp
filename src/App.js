@@ -5,6 +5,7 @@ import { collection, getDocs } from "firebase/firestore";
 
 function App() {
   const [sites, setSites] = useState([]);
+  const [city, setCity] = useState("");
 
   const getSites = async (str) => {
     const colRef = collection(db, str);
@@ -14,9 +15,27 @@ function App() {
 
   return (
     <div className="App">
+      <label htmlFor="city">Choose a city:</label>
+      <select
+        name="city"
+        id="city"
+        onChange={(e) => {
+          setCity(e.target.value);
+        }}
+      >
+        <option> </option>
+        <optgroup label="UK">
+          <option value="london">London</option>
+          <option value="edinburgh">Edinburgh</option>
+        </optgroup>
+        <optgroup label="Greece">
+          <option value="athens">Athens</option>
+          <option value="thessaloniki">Thessaloniki</option>
+        </optgroup>
+      </select>
       <button
         onClick={() => {
-          getSites("athens");
+          getSites(city);
         }}
       >
         Get Sites
