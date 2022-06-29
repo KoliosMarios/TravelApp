@@ -13,38 +13,45 @@ function Main() {
   };
 
   return (
-    <div>
-      <label htmlFor="city">Choose a city:</label>
-      <select
-        name="city"
-        id="city"
-        onChange={(e) => {
-          setCity(e.target.value);
-        }}
-      >
-        <option> </option>
-        <optgroup label="UK">
-          <option value="london">London</option>
-          <option value="edinburgh">Edinburgh</option>
-        </optgroup>
-        <optgroup label="Greece">
-          <option value="athens">Athens</option>
-          <option value="thessaloniki">Thessaloniki</option>
-        </optgroup>
-      </select>
-      <button
-        onClick={() => {
-          getSites(city);
-        }}
-      >
-        Get Sites
-      </button>
+    <div className="main">
+      <div className="search">
+        <label id="search_label" htmlFor="city">
+          Choose a city:
+        </label>
+        <select
+          name="city"
+          id="city"
+          onChange={(e) => {
+            setCity(e.target.value);
+          }}
+        >
+          <option> </option>
+          <optgroup label="UK">
+            <option value="london">London</option>
+            <option value="edinburgh">Edinburgh</option>
+          </optgroup>
+          <optgroup label="Greece">
+            <option value="athens">Athens</option>
+            <option value="thessaloniki">Thessaloniki</option>
+          </optgroup>
+        </select>
+        <button
+          id="get_btn"
+          onClick={() => {
+            getSites(city);
+          }}
+        >
+          Get Sites
+        </button>
+      </div>
       {sites.map((site) => {
         return (
-          <div key={site.id}>
-            <h1>Name: {site.name}</h1>
-            <p>Info: {site.info}</p>
-            <img src={site.img} alt="img" />
+          <div className="present" key={site.id}>
+            <h1>{site.name}</h1>
+            <p>{site.info}</p>
+            <div className="img_container">
+              <img src={site.img} alt="img" />
+            </div>
           </div>
         );
       })}
