@@ -88,6 +88,14 @@
     width: 60%;
 }
 
+.site_map {
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    color: #1d3557;
+    text-decoration: none;
+}
+
 .site_link {
     position: absolute;
     bottom: 0;
