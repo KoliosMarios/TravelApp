@@ -3,13 +3,13 @@ import { db } from "./firebase-config";
 import { collection, getDocs } from "firebase/firestore";
 
 function Main() {
-  const [sites, setSites] = useState([]);
+  const [sights, setSights] = useState([]);
   const [city, setCity] = useState("");
 
-  const getSites = async (str) => {
+  const getSights = async (str) => {
     const colRef = collection(db, str);
     const data = await getDocs(colRef);
-    setSites(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    setSights(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
 
   return (
@@ -38,20 +38,21 @@ function Main() {
         <button
           id="get_btn"
           onClick={() => {
-            getSites(city);
+            getSights(city);
           }}
         >
-          Get Sites
+          Get Sights
         </button>
       </div>
-      {sites.map((site) => {
+      {sights.map((sight) => {
         return (
-          <div className="present" key={site.id}>
-            <h1>{site.name}</h1>
-            <p>{site.info}</p>
+          <div className="present" key={sight.id}>
+            <h1>{sight.name}</h1>
+            <p>{sight.info}</p>
             <div className="img_container">
-              <img src={site.img} alt="img" />
+              <img src={sight.img} alt="img" />
             </div>
+            <a className="site_link" href={sight.site} target="_blank">More information</a>
           </div>
         );
       })}
