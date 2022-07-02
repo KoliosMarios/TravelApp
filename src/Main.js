@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { db } from "./firebase-config";
 import { collection, getDocs } from "firebase/firestore";
+import "./styles/Main.css";
 
 function Main() {
   const [sights, setSights] = useState([]);
@@ -52,8 +53,22 @@ function Main() {
             <div className="img_container">
               <img src={sight.img} alt="img" />
             </div>
-            <a className="site_link" id="left" href={sight.map} target="_blank">Google Map</a>
-            <a className="site_link" id="right" href={sight.site} target="_blank">More information</a>
+            <a
+              className="sight_link"
+              id="left"
+              href={sight.map}
+              target="_blank"
+            >
+              Google Map
+            </a>
+            <a
+              className="sight_link"
+              id="right"
+              href={sight.site}
+              target="_blank"
+            >
+              More information
+            </a>
           </div>
         );
       })}

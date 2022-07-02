@@ -1,0 +1,21 @@
+.navbar {
+  display: flex;
+  gap: 30px;
+  background-color: var(--dark-blue);
+  padding: 20px;
+}
+
+.link {
+  padding: 5px;
+  color: var(--light);
+  text-decoration: none;
+}
+
+.link:hover {
+  background-color: var(--light-blue);
+}
+
+.active {
+  padding: 5px;
+  color: var(--coral);
+}
