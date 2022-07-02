@@ -1,4 +1,5 @@
 import "./styles/Home.css";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -13,6 +14,9 @@ function Home() {
           Just select the city you want to visit and let our list drive you
           through the most iconic attractions in that destination
         </p>
+        <Link to="main" className="btn">
+          Get Started
+        </Link>
       </div>
     </div>
   );
