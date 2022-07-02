@@ -52,8 +52,8 @@ function Main() {
             <div className="img_container">
               <img src={sight.img} alt="img" />
             </div>
-            <a className="site_map" href={sight.map} target="_blank">Google Map</a>
-            <a className="site_link" href={sight.site} target="_blank">More information</a>
+            <a className="site_link" id="left" href={sight.map} target="_blank">Google Map</a>
+            <a className="site_link" id="right" href={sight.site} target="_blank">More information</a>
           </div>
         );
       })}
