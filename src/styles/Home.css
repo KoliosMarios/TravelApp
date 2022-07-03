@@ -30,6 +30,10 @@
   border-top: 1px dotted var(--dark-blue);
 }
 
+.about_para {
+  padding: 7px;
+}
+
 .btn {
   cursor: pointer;
   color: var(--light);
