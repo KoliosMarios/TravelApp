@@ -6,11 +6,11 @@ function About() {
       <div className="home">
         <h1 className="home_title">Some information about our team</h1>
         <p className="about_para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
-          cum, recusandae officia eveniet provident voluptas expedita reiciendis
-          pariatur aperiam animi voluptatibus, nostrum sapiente culpa atque
-          doloribus debitis neque hic magni.
+          We are a team of travel enthusiasts who decided to gather our
+          experiences of the world's most famous attractions and sort them by
+          city.
         </p>
+        <p>Hope you find our work helpful! Good travels!!!</p>
       </div>
     </div>
   );
