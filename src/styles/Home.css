@@ -48,3 +48,44 @@
 .btn:hover {
   background: var(--light-blue);
 }
+
+.label {
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+input {
+  padding: 3px;
+  border: 1px solid var(--light-blue);
+  border-radius: 5px;
+  
+}
+
+input:hover {
+  background-color: var(--light-blue);
+}
+
+input:focus {
+  background-color: var(--light);
+}
+
+textarea {
+  padding: 3px;
+  border: 1px solid var(--light-blue);
+  border-radius: 5px;
+  width: 250px;
+  min-width: 200px;
+  max-width: 380px;
+  height: 100px;
+  min-height: 50px;
+  max-height: 200px;
+}
+
+textarea:hover {
+  background-color: var(--light-blue);
+}
+
+textarea:focus {
+  background-color: var(--light);
+}

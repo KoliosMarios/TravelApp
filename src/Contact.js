@@ -9,16 +9,22 @@ function Contact() {
   const [newMsg, setNewMsg] = useState("");
   const usersCollectionRef = collection(db, "messages");
 
+  const name_input = document.getElementById("name");
+  const email_input = document.getElementById("email");
+  const msg_input = document.getElementById("msg");
+
   const createMsg = async () => {
     await addDoc(usersCollectionRef, { name: newName, email: newEmail, msg: newMsg });
     alert("Message send!");
-    window.location.reload();
+    name_input.value = "";
+    email_input.value = "";
+    msg_input.value = "";
   };
 
   return (
     <div className="home_container">
       <div className="home">
-        <h3>Leave us your message!</h3>
+        <h3 className="home_subtitle">Leave us your message!</h3>
         <label htmlFor="name" className="label">
           Name:
         </label>
