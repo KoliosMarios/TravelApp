@@ -29,6 +29,11 @@
   color: var(--light);
 }
 
+.sights_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 .present {
   width: 95%;
   padding: 5px;
@@ -50,7 +55,7 @@
 }
 
 .img_container img {
-  width: 60%;
+  width: 80%;
 }
 
 .sight_link {
@@ -71,4 +76,11 @@
 
 #right {
   right: 5px;
+}
+
+@media screen and (max-width: 992px) {
+  .sights_container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }

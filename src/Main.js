@@ -4,9 +4,12 @@ import { collection, getDocs } from "firebase/firestore";
 import "./styles/Main.css";
 
 function Main() {
+  // set the state for the sights array
   const [sights, setSights] = useState([]);
+  // set the state for the string that we put in the getSights function
   const [city, setCity] = useState("");
 
+  // we use the str parameter here because we call different collections from firebase depending on the users option
   const getSights = async (str) => {
     const colRef = collection(db, str);
     const data = await getDocs(colRef);
@@ -45,33 +48,35 @@ function Main() {
           Get Sights
         </button>
       </div>
-      {sights.map((sight) => {
-        return (
-          <div className="present" key={sight.id}>
-            <h1>{sight.name}</h1>
-            <p>{sight.info}</p>
-            <div className="img_container">
-              <img src={sight.img} alt="img" />
+      <div className="sights_container">
+        {sights.map((sight) => {
+          return (
+            <div className="present" key={sight.id}>
+              <h1>{sight.name}</h1>
+              <p>{sight.info}</p>
+              <div className="img_container">
+                <img src={sight.img} alt="img" />
+              </div>
+              <a
+                className="sight_link"
+                id="left"
+                href={sight.map}
+                target="_blank"
+              >
+                Google Map
+              </a>
+              <a
+                className="sight_link"
+                id="right"
+                href={sight.site}
+                target="_blank"
+              >
+                More information
+              </a>
             </div>
-            <a
-              className="sight_link"
-              id="left"
-              href={sight.map}
-              target="_blank"
-            >
-              Google Map
-            </a>
-            <a
-              className="sight_link"
-              id="right"
-              href={sight.site}
-              target="_blank"
-            >
-              More information
-            </a>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }
