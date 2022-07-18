@@ -1,9 +1,10 @@
-import './styles/Header.css'
+import "./styles/Header.css";
+import logo from "./logo/logo.png";
 
 function Header() {
   return (
     <div className="header">
-      <h1 id="sight_title">X-Sighted</h1>
+      <img src={logo} alt="logo" />
     </div>
   );
 }

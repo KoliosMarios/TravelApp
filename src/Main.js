@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { db } from "./firebase-config";
 import { collection, getDocs } from "firebase/firestore";
 import "./styles/Main.css";
@@ -8,6 +8,17 @@ function Main() {
   const [sights, setSights] = useState([]);
   // set the state for the string that we put in the getSights function
   const [city, setCity] = useState("");
+
+  //render the results for the default value
+  useEffect(() => {
+    const getInitSight = async () => {
+      const colRef = collection(db, "athens");
+      const data = await getDocs(colRef);
+      setSights(data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))); //with the dots the object is gonna have all the fields that been returned which is name and age, and then we add the id
+    };
+
+    getInitSight();
+  }, []);
 
   // we use the str parameter here because we call different collections from firebase depending on the users option
   const getSights = async (str) => {
@@ -29,14 +40,19 @@ function Main() {
             setCity(e.target.value);
           }}
         >
-          <option> </option>
+          <optgroup label="Greece">
+            <option value="athens" selected>
+              Athens
+            </option>
+            <option value="thessaloniki">Thessaloniki</option>
+            <option value="chania">Chania</option>
+            <option value="rhodes">Rhodes</option>
+          </optgroup>
           <optgroup label="UK">
             <option value="london">London</option>
             <option value="edinburgh">Edinburgh</option>
-          </optgroup>
-          <optgroup label="Greece">
-            <option value="athens">Athens</option>
-            <option value="thessaloniki">Thessaloniki</option>
+            <option value="cambridge">Cambridge</option>
+            <option value="oxford">Oxford</option>
           </optgroup>
         </select>
         <button
