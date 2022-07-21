@@ -4,17 +4,20 @@ import { db } from "./firebase-config";
 import { collection, addDoc } from "firebase/firestore";
 
 function Comments() {
-  const [newUserName, setNewUserName] = useState("user");
+  const [newUserName, setNewUserName] = useState("unknown user");
   const [newComment, setNewComment] = useState("");
+  const [newTime, setNewTime] = useState(0);
   const usersCollectionRef = collection(db, "comments");
 
   const userName_input = document.getElementById("userName");
   const comment_input = document.getElementById("comment");
 
   const sendComment = async () => {
+    setNewTime(Date.now());
     await addDoc(usersCollectionRef, {
       name: newUserName,
       comment: newComment,
+      time: newTime,
     });
     alert("Message send!");
     userName_input.value = "";
