@@ -28,6 +28,12 @@ function Navbar() {
       >
         Contact Us
       </NavLink>
+      <NavLink
+        to="comments"
+        className={({ isActive }) => (isActive ? "active" : "link")}
+      >
+        Comments
+      </NavLink>
     </div>
   );
 }

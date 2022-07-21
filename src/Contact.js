@@ -40,8 +40,8 @@ function Contact() {
         <br />
         <input
           type="string"
-          placeholder="(Optional)"
           id="name"
+          placeholder="(optional)"
           onChange={(event) => {
             setNewName(event.target.value);
           }}
@@ -53,8 +53,8 @@ function Contact() {
         <br />
         <input
           type="string"
-          placeholder="(Optional)"
           id="email"
+          placeholder="(optional)"
           onChange={(event) => {
             setNewEmail(event.target.value);
           }}

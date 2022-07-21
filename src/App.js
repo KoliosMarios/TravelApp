@@ -3,6 +3,7 @@ import Home from "./Home";
 import Main from "./Main";
 import About from "./About";
 import Contact from "./Contact";
+import Comments from "./Comments";
 import SharedLayout from "./SharedLayout";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route path="main" element={<Main />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="comments" element={<Comments />} />
         </Route>
       </Routes>
     </BrowserRouter>
