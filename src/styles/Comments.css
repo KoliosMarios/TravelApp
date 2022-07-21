@@ -1,0 +1,26 @@
+.comments {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment_form,
+.comments_list {
+  width: 60%;
+  margin: 10px;
+}
+
+.comment_form {
+  text-align: center;
+}
+
+.comment_form label, .comments_list h3 {
+    color: var(--dark-blue);
+}
+
+.comment_item{
+    padding: 10px;
+    margin: 5px;
+    background-color: white;
+}
