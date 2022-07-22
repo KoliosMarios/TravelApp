@@ -19,29 +19,40 @@ function Comments() {
   //reference to "comments" collection
   const usersCollectionRef = collection(db, "comments");
 
-  //getting the input from comments form
-  const userName_input = document.getElementById("userName");
+  //reference the input from comments form to be able to empty it
   const comment_input = document.getElementById("comment");
 
+  //get the comments that are already in the database to display them
   useEffect(() => {
     const getComments = async () => {
       const colRef = collection(db, "comments");
-      //We order the documents from older to newest
+      //We put in order order the documents from older to newest
       const q = query(colRef, orderBy("time"));
       const data = await getDocs(q);
       setComments(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     getComments();
-  }, [comments]);
+  }, []);
 
   const sendComment = async () => {
+    //add the new comment in database
     await addDoc(usersCollectionRef, {
       name: newUserName,
       comment: newComment,
       time: newTime,
     });
-    userName_input.value = "";
+    //empty the value in comment section after the user posts the comment
+    // we don't change the name value because from the same device, chances are it is the same user
+    //if a different user uses the app from the same device without it being refreshed he/she can change the name 
     comment_input.value = "";
+    //Update the array of comments to display it again
+    const getNewComments = async () => {
+      const colRef = collection(db, "comments");
+      const q = query(colRef, orderBy("time"));
+      const data = await getDocs(q);
+      setComments(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getNewComments();
   };
 
   return (
@@ -69,6 +80,7 @@ function Comments() {
           id="comment"
           onChange={(event) => {
             setNewComment(event.target.value);
+            //we put the setNewTime function here again because we don't know which section the user is gonna complete first
             setNewTime(Date.now());
           }}
         /><br/>
