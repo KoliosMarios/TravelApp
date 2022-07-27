@@ -12,7 +12,7 @@ import {
 function Comments() {
   //set states
   const [newUserName, setNewUserName] = useState("unknown user");
-  const [newComment, setNewComment] = useState("");
+  const [newComment, setNewComment] = useState("unknown comment");
   const [newTime, setNewTime] = useState(0);
   const [comments, setComments] = useState([]);
 

@@ -14,8 +14,8 @@ function Home() {
           Just select the city you want to visit and let our list drive you
           through the most iconic attractions in that destination
         </p>
-        <Link to="main" className="btn">
-          Get Started
+        <Link to="adminLogIn" className="btn">
+          Log In as Admin
         </Link>
       </div>
     </div>

@@ -5,9 +5,9 @@ import { collection, addDoc } from "firebase/firestore";
 
 function Contact() {
   //States for the inputs and message of the user
-  const [newName, setNewName] = useState("");
-  const [newEmail, setNewEmail] = useState("");
-  const [newMsg, setNewMsg] = useState("");
+  const [newName, setNewName] = useState("unknown name");
+  const [newEmail, setNewEmail] = useState("unknown mail");
+  const [newMsg, setNewMsg] = useState("unknown message");
   //reference to the firebase collection that saves the messages
   const usersCollectionRef = collection(db, "messages");
 

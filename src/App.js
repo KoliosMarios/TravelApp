@@ -4,6 +4,9 @@ import Main from "./Main";
 import About from "./About";
 import Contact from "./Contact";
 import Comments from "./Comments";
+import AdminLogIn from "./AdminLogIn";
+import Admin from "./Admin";
+import Error from "./Error";
 import SharedLayout from "./SharedLayout";
 
 function App() {
@@ -16,7 +19,10 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="comments" element={<Comments />} />
+          <Route path="adminLogIn" element={<AdminLogIn />} />
+          <Route path="*" element={<Error />} />
         </Route>
+        <Route path="admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>
   );
