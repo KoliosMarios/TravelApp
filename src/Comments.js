@@ -7,13 +7,14 @@ import {
   getDocs,
   query,
   orderBy,
+  Timestamp,
 } from "firebase/firestore";
+import moment from "moment";
 
 function Comments() {
   //set states
   const [newUserName, setNewUserName] = useState("unknown user");
   const [newComment, setNewComment] = useState("unknown comment");
-  const [newTime, setNewTime] = useState(0);
   const [comments, setComments] = useState([]);
 
   //reference to "comments" collection
@@ -39,11 +40,11 @@ function Comments() {
     await addDoc(usersCollectionRef, {
       name: newUserName,
       comment: newComment,
-      time: newTime,
+      time: Timestamp.fromDate(new Date()),
     });
     //empty the value in comment section after the user posts the comment
     // we don't change the name value because from the same device, chances are it is the same user
-    //if a different user uses the app from the same device without it being refreshed he/she can change the name 
+    //if a different user uses the app from the same device without it being refreshed he/she can change the name
     comment_input.value = "";
     //Update the array of comments to display it again
     const getNewComments = async () => {
@@ -67,9 +68,9 @@ function Comments() {
           placeholder="(optional)"
           onChange={(event) => {
             setNewUserName(event.target.value);
-            setNewTime(Date.now());
           }}
-        /><br/>
+        />
+        <br />
         <label htmlFor="msg" className="label">
           Message:
         </label>
@@ -80,10 +81,9 @@ function Comments() {
           id="comment"
           onChange={(event) => {
             setNewComment(event.target.value);
-            //we put the setNewTime function here again because we don't know which section the user is gonna complete first
-            setNewTime(Date.now());
           }}
-        /><br/>
+        />
+        <br />
         <button onClick={sendComment} className="btn">
           Send message
         </button>
@@ -94,6 +94,7 @@ function Comments() {
             <div className="comment_item" key={comment.id}>
               <h3>{comment.name}</h3>
               <p>{comment.comment}</p>
+              <small>{moment(comment.time.toDate()).fromNow()}</small>
             </div>
           );
         })}

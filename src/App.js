@@ -8,23 +8,29 @@ import AdminLogIn from "./AdminLogIn";
 import Admin from "./Admin";
 import Error from "./Error";
 import SharedLayout from "./SharedLayout";
+import AuthProvider from "./context/auth";
+import PrivateRoute from "./PrivateRoute";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<SharedLayout />}>
-          <Route index element={<Home />} />
-          <Route path="main" element={<Main />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="comments" element={<Comments />} />
-          <Route path="adminLogIn" element={<AdminLogIn />} />
-          <Route path="*" element={<Error />} />
-        </Route>
-        <Route path="admin" element={<Admin />} />
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<SharedLayout />}>
+            <Route index element={<Home />} />
+            <Route path="main" element={<Main />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="comments" element={<Comments />} />
+            <Route path="adminLogIn" element={<AdminLogIn />} />
+            <Route path="*" element={<Error />} />
+          </Route>
+          <Route element={<PrivateRoute />}>
+            <Route path="admin" element={<Admin />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 

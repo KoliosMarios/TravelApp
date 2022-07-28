@@ -1,0 +1,9 @@
+.adminMessages, 
+.adminComments {
+    margin: 20px;
+}
+
+.message,
+.comment {
+    border: 1px dotted;
+}
