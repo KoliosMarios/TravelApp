@@ -18,7 +18,7 @@ function Comments() {
   const [comments, setComments] = useState([]);
 
   //reference to "comments" collection
-  const usersCollectionRef = collection(db, "comments");
+  const colRef = collection(db, "comments");
 
   //reference the input from comments form to be able to empty it
   const comment_input = document.getElementById("comment");
@@ -26,8 +26,7 @@ function Comments() {
   //get the comments that are already in the database to display them
   useEffect(() => {
     const getComments = async () => {
-      const colRef = collection(db, "comments");
-      //We put in order order the documents from older to newest
+      //We put in order the documents from older to newest
       const q = query(colRef, orderBy("time"));
       const data = await getDocs(q);
       setComments(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
@@ -37,9 +36,10 @@ function Comments() {
 
   const sendComment = async () => {
     //add the new comment in database
-    await addDoc(usersCollectionRef, {
+    await addDoc(colRef, {
       name: newUserName,
       comment: newComment,
+      //Here we get timestamp from the point the comment is posted
       time: Timestamp.fromDate(new Date()),
     });
     //empty the value in comment section after the user posts the comment
@@ -48,7 +48,7 @@ function Comments() {
     comment_input.value = "";
     //Update the array of comments to display it again
     const getNewComments = async () => {
-      const colRef = collection(db, "comments");
+      //We put in order the documents from older to newest
       const q = query(colRef, orderBy("time"));
       const data = await getDocs(q);
       setComments(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
@@ -94,6 +94,7 @@ function Comments() {
             <div className="comment_item" key={comment.id}>
               <h3>{comment.name}</h3>
               <p>{comment.comment}</p>
+              {/* We use the fromNow() function to show us how much time has passed since the comment was posted */}
               <small>{moment(comment.time.toDate()).fromNow()}</small>
             </div>
           );

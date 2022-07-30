@@ -7,17 +7,14 @@ import { useNavigate } from "react-router-dom";
 function AdminLogIn() {
   const navigate = useNavigate();
 
+  //setting the states for the admins email and password
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
-
-  const log_in_email = document.getElementById("logInEmail");
-  const log_in_password = document.getElementById("logInPassword");
 
   const login = async () => {
     try {
       await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-      log_in_email.value = "";
-      log_in_password.value = "";
+      //after the admin logs in we redirect him/her to the admin home page
       navigate("/admin");
     } catch (error) {
       alert(error.message);
@@ -45,7 +42,6 @@ function AdminLogIn() {
         />
         <br />
         <button className="btn" onClick={login}>
-          {" "}
           Login
         </button>
         <br />

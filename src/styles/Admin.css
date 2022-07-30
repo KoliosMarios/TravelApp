@@ -1,9 +1,38 @@
-.adminMessages, 
+.adminMessages,
 .adminComments {
-    margin: 20px;
+  margin: 20px;
 }
 
 .message,
 .comment {
-    border: 1px dotted;
+  border: 1px dotted;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.signOutBtn,
+.deleteBtn {
+  cursor: pointer;
+  color: var(--light);
+  background: rgb(167, 41, 41);
+  border: transparent;
+  border-radius: 5px;
+  padding: 0.375rem 0.75rem;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.signOutBtn {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.signOutBtn:hover, .deleteBtn:hover {
+  background: rgb(255, 150, 150);
+  color: black;
+}
+
+.deleteBtn {
+margin-top: 5px;
 }
