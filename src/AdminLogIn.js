@@ -34,6 +34,7 @@ function AdminLogIn() {
         />
         <br />
         <input
+          type="password"
           id="logInPassword"
           placeholder="Password..."
           onChange={(event) => {
