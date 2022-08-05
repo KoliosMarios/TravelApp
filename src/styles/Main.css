@@ -32,7 +32,7 @@ select {
 .present {
   width: 95%;
   padding: 5px;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
   margin: 5px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   position: relative;
@@ -56,14 +56,19 @@ select {
 
 .sight_link {
   position: absolute;
+  display: inline-block;
+  color: var(--light);
+  background: var(--dark-blue);
+  border: transparent;
+  border-radius: 5px;
   bottom: 0;
-  color: var(--dark-blue);
+  padding: 0.375rem 0.75rem;
+  margin-bottom: 10px;
   text-decoration: none;
 }
 
 .sight_link:hover {
-  color: var(--coral);
-  text-decoration: underline;
+  background: var(--light-blue);
 }
 
 #left {
