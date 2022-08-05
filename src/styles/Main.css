@@ -20,22 +20,8 @@
   background-color: var(--light);
 }
 
-#get_btn {
-  margin-left: 10px;
-  padding: 5px;
-  border-radius: 10px;
-  border: none;
-  background-color: var(--dark-blue);
-  color: var(--light);
-  cursor: pointer;
-}
-
 select {
   cursor: pointer;
-}
-
-#get_btn:hover {
-  background-color: var(--light-blue);
 }
 
 .sights_container {
@@ -48,8 +34,9 @@ select {
   padding: 5px;
   padding-bottom: 30px;
   margin: 5px;
-  border: 1px dashed var(--light-blue);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   position: relative;
+  margin-bottom: 15px;
 }
 
 .present h1 {

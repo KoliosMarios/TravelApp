@@ -6,8 +6,6 @@ import "./styles/Main.css";
 function Main() {
   // set the state for the sights array
   const [sights, setSights] = useState([]);
-  // set the state for the string that we put in the getSights function
-  const [city, setCity] = useState("");
 
   //render the results for the default value
   useEffect(() => {
@@ -37,7 +35,7 @@ function Main() {
           name="city"
           id="city"
           onChange={(e) => {
-            setCity(e.target.value);
+            getSights(e.target.value);
           }}
         >
           <optgroup label="Greece">
@@ -55,14 +53,6 @@ function Main() {
             <option value="oxford">Oxford</option>
           </optgroup>
         </select>
-        <button
-          id="get_btn"
-          onClick={() => {
-            getSights(city);
-          }}
-        >
-          Get Sights
-        </button>
       </div>
       <div className="sights_container">
         {sights.map((sight) => {

@@ -10,7 +10,6 @@ import Error from "./Error";
 import SharedLayout from "./SharedLayout";
 import AuthProvider from "./context/auth";
 import PrivateRoute from "./PrivateRoute";
-
 function App() {
   return (
     // we wrap all the Routes to the AuthProvider component so we can pass the user state to every component
