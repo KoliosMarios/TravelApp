@@ -37,7 +37,7 @@ $ npm start
 
 To run this project, you will need to add your own firebase credentials to the following environment variables to your .env file
 
-`REACT_APP_API_KE`
+`REACT_APP_API_KEY`
 
 `REACT_APP_AUTH_DOMAIN`
 
