@@ -1,70 +1,67 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# X-Sighted Travel-App
 
-## Available Scripts
+An app where the user chooses a city that wants to visit and the app presents him/her with the best attractions this city has to offer
 
-In the project directory, you can run:
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Most people love to travel. 
+In this app we collected the best attractions some cities have to offer 
+and we present it in an attractive way with links to their maps and official web sites.
+You can also communicate with the admins of the page or with other users in a comment section.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Clone and Run
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To install and run my project
 
-### `npm run build`
+1. Open your terminal and then type
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+$ git clone git@github.com:KoliosMarios/TravelApp.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This clones the repo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. cd into the new folder and type
 
-### `npm run eject`
+$ npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This installs the required dependencies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. To run the React project.
+$ npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    
+## Environment Variables
 
-## Learn More
+To run this project, you will need to add your own firebase credentials to the following environment variables to your .env file
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`REACT_APP_API_KE`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`REACT_APP_AUTH_DOMAIN`
 
-### Code Splitting
+`REACT_APP_PROJECT_ID`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+`REACT_APP_STORAGE_BUCKET`
 
-### Analyzing the Bundle Size
+`REACT_APP_MESSAGING_SENDER_ID`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+`REACT_APP_APP_ID`
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Tech Stack
 
-### Advanced Configuration
+React.js  Firebase
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Demo
 
-### `npm run build` fails to minify
+https://secure.vidyard.com/organizations/2643422/library
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Feedback
+
+If you have any feedback, please reach out to us at koliosmarios@gmail.com
+
